@@ -1,4 +1,3 @@
-# Casi-final
 lnombre=[]
 lapellido=[]
 lapellido2=[]
@@ -41,21 +40,23 @@ Firma = []
 def salida (o,n):
     if o in n:
         a=n.index(o)
-        return('El nombre completo de la persona es: {}'.format(lnombre[a]), '{}'.format (lapellido[a]), {}.format (lapellido2[a]), 'que pertenece al area de {}'.format(larea[a]), 'ingresó a las {} horas'.format(lingreso[a]), 'y salió a las {} horas'.format(lsalida[a]))
+        b=print('El nombre completo de la persona es: {}'.format(lnombre[a]), '{}'.format(lapellido[a]), '{}'.format (lapellido2[a]), 'que pertenece al area de {}'.format(larea[a]), 'ingresó a las {} horas'.format(lingreso[a]), 'y salió a las {} horas'.format(lsalida[a]))
+        return(b)
     else:
         return('{} no existe'.format(o))
 def salida2 (o,n):
     a=0
     if o in n:
         a=n.index(o)
-        return('El nombre completo de la persona es: {} {} {}, con DNI {}, ingresó a las {} horas y salió a las {} horas, con la autorización de: {}'.format(lnombrevisit[a],lapellidovisit[a].lapellido2visit[a],ldnivisit[a],lingresovisit[a],lsalidavisit[a]),lautoriza[a])
+        g=print('El nombre completo de la persona es: {} {} {}, con DNI {}, ingresó a las {} horas y salió a las {} horas, con la autorización de: {}'.format(lnombrevisit[a],lapellidovisit[a].lapellido2visit[a],ldnivisit[a],lingresovisit[a],lsalidavisit[a]),lautoriza[a])
+        return(g)
     else:
         return('{} no existe'.format(o))
 
-def actualizacion(lista,dato):
+def actualizacion(lista,antiguo,nuevo):
     posicion=0
-    posicion=lista.index(actualizar)
-    lista[posicion]=(dato)
+    posicion=lista.index(antiguo)
+    lista[posicion]=(nuevo)
 
 def actualizardato1 ():
     print("Si desea actualizar otro dato de este mismo registro: 1")
@@ -288,7 +289,7 @@ def Eliminar1(Pos):
     Especialidad.pop(Pos)
     MotivoNoCarnet.pop(Pos)
 
-def Listar():
+def Listar1():
     print("")
     print("        LISTADO DE ALUMNOS UNIVERSITARIOS UTEC QUE NO CUENTAN CON CARNET UNIVERSITARIO             ")
     print("---------------------------------------------------------------------------------------------------")
@@ -739,7 +740,6 @@ while accion==-1:
                 accion=-1
         while accion2==3:
             actualizar = str(input("Ingrese el nombre o el primer apellido del registro que quiere actualizar: "))
-
             while actualizar in lnombre or actualizar==1:
                 print("¿Qué dato desea actualizar?")
                 print("Nombre: 1")
@@ -752,7 +752,7 @@ while accion==-1:
 
                 if datoac==1:
                     nombreac=str(input("Ingrese el nuevo nombre: "))
-                    actualizacion(lnombre,nombreac)
+                    actualizacion(lnombre,actualizar,nombreac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -767,7 +767,7 @@ while accion==-1:
 
                 if datoac==2:
                     apellidoac=str(input("Ingrese el nuevo primer apellido: "))
-                    actualizacion(lapellido,apellidoac)
+                    actualizacion(lapellido,actualizar,apellidoac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -781,7 +781,7 @@ while accion==-1:
                         accion=-1
                 if datoac==3:
                     apellido2ac=str(input("Ingrese el nuevo segundo apellido: "))
-                    actualizacion(lapellido2,apellido2ac)
+                    actualizacion(lapellido2,actualizar,apellido2ac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -796,7 +796,7 @@ while accion==-1:
 
                 if datoac==4:
                     ingresoac=str(input("Ingrese la nueva hora de ingreso (hh:mm): "))
-                    actualizacion(lingreso,ingresoac)
+                    actualizacion(lingreso,actualizar,ingresoac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -811,7 +811,7 @@ while accion==-1:
 
                 if datoac==5:
                     salidaac=str(input("Ingrese la nueva hora de salida (hh:mm): "))
-                    actualizacion(lsalida,salidaac)
+                    actualizacion(lsalida,actualizar,salidaac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -835,7 +835,7 @@ while accion==-1:
                 datoac=int(input("Ingrese el número de dato a actualizar: "))
                 if datoac==1:
                     nombreac=str(input("Ingrese el nuevo nombre: "))
-                    actualizacion(lnombre,nombreac)
+                    actualizacion(lnombre,actualizar,nombreac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -850,7 +850,7 @@ while accion==-1:
 
                 if datoac==2:
                     apellidoac=str(input("Ingrese el nuevo primer apellido: "))
-                    actualizacion(lapellido,apellidoac)
+                    actualizacion(lapellido,actualizar,apellidoac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -865,7 +865,7 @@ while accion==-1:
 
                 if datoac==3:
                     apellido2ac=str(input("Ingrese el nuevo segundo apellido: "))
-                    actualizacion(lapellido2,apellido2ac)
+                    actualizacion(lapellido2,actualizar,apellido2ac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -879,7 +879,7 @@ while accion==-1:
                         accion=-1
                 if datoac==4:
                     ingresoac=str(input("Ingrese la nueva hora de ingreso (hh:mm): "))
-                    actualizacion(lingreso,ingresoac)
+                    actualizacion(lingreso,actualizar,ingresoac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -894,7 +894,7 @@ while accion==-1:
 
                 if datoac==5:
                     salidaac=str(input("Ingrese la nueva hora de salida (hh:mm): "))
-                    actualizacion(lsalida,salidaac)
+                    actualizacion(lsalida,actualizar,salidaac)
                     print("Si desea actualizar otro dato de este mismo registro: 1")
                     print("Si desea actualizar otro registro: 2")
                     print("Si desea terminar su acción y volver al menú: 3")
@@ -906,7 +906,13 @@ while accion==-1:
                     else:
                         accion2=0
                         accion=-1
-
+            if actualizar not in lnombre and actualizar not in lapellido:
+                opcion=int(input("El dato que desea actualizar no existe. Para ingresar otro dato (1), para volver al menú (2): "))
+                if opcion==1:
+                    accion2=3
+                else:
+                    accion2=0
+                    accion=-1
         while accion2==4:
             borrar = str(input("Ingrese el nombre o el primer apellido del registro que quiere borrar: "))
             for i in lnombre:
@@ -942,6 +948,13 @@ while accion==-1:
                     else:
                         accion2=0
                         accion=-1
+            if borrar not in lnombre and actualizar not in lapellido:
+                opcion=int(input("El dato que desea borrar no existe. Para ingresar otro dato (1), para volver al menú (2): "))
+                if opcion==1:
+                    accion2=4
+                else:
+                    accion2=0
+                    accion=-1
     while accion==2:
         print("************************************************")
         print("Ingrese el número de acción que desea realizar:")
@@ -977,7 +990,7 @@ while accion==-1:
 
             observacionvisit=str(input("Ingrese cualquier observación adicional o SO (Sin Observación): "))
             lobservacionvisit.append(observacionvisit)
-
+            print("*************************************************")
             print("Se ha realizado su registro correctamente")
             print("Si desea hacer otro registro: 1")
             print("Si desea terminar su acción y volver al menú: 2")
@@ -1020,45 +1033,46 @@ while accion==-1:
         while accion2visit==3:
             actualizarvisit = str(input("Ingrese el nombre o el primer apellido del registro que quiere actualizar: "))
             while actualizarvisit in lnombrevisit or actualizarvisit==1:
+                print("******************************")
                 print("¿Qué dato desea actualizar?")
-                print("Nombre: 1")
-                print("Primer apellido: 2")
-                print("Segundo apellido: 3")
-                print("DNI: 4")
-                print("Persona que autoriza: 5")
-                print("Correo: 6")
-                print("La hora de ingreso: 7")
-                print("La hora de salida: 8")
+                print("Nombre:                   1")
+                print("Primer apellido:          2")
+                print("Segundo apellido:         3")
+                print("DNI:                      4")
+                print("Persona que autoriza:     5")
+                print("Correo:                   6")
+                print("La hora de ingreso:       7")
+                print("La hora de salida:        8")
                 datoac=int(input("Ingrese el número del tipo de dato a actualizar: "))
 
                 if datoac==1:
                     nombreacvisit=str(input("Ingrese el nuevo nombre: "))
-                    actualizacion(lnombrevisit,nombreacvisit)
+                    actualizacion(lnombrevisit,actualizarvisit,nombreacvisit)
                     actualizardato3()
 
                 if datoac==2:
                     apellidoacvisit=str(input("Ingrese el nuevo primer apellido: "))
-                    actualizacion(lapellidovisit,apellidoacvisit)
+                    actualizacion(lapellidovisit,actualizarvisit,apellidoacvisit)
                     actualizardato3()
                 if datoac==3:
                     apellido2acvisit=str(input("Ingrese el nuevo segundo apellido: "))
-                    actualizacion(lapellido2visit,apellido2acvisit)
+                    actualizacion(lapellido2visit,actualizarvisit,apellido2acvisit)
                     actualizardato3()
                 if datoac==4:
                     dniacvisit=str(input("Ingrese el nuevo DNI: "))
-                    actualizacion(ldnivisit,dniacvisit)
+                    actualizacion(ldnivisit,actualizarvisit,dniacvisit)
                     actualizardato3()
                 if datoac==5:
                     autorizaactvisit=str(input("Ingrese la nueva persona que autoriza: "))
-                    actualizacion(lautoriza,autorizaactvisit)
+                    actualizacion(lautoriza,actualizarvisit,autorizaactvisit)
                     actualizardato3()
                 if datoac==6:
                     ingresoacvisit=str(input("Ingrese la nueva hora de ingreso (hh:mm): "))
-                    actualizacion(lingresovisit,ingresoacvisit)
+                    actualizacion(lingresovisit,actualizarvisit,ingresoacvisit)
                     actualizardato3()
                 if datoac==7:
                     salidaacvisit=str(input("Ingrese la nueva hora de salida (hh:mm): "))
-                    actualizacion(lsalidavisit,salidaacvisit)
+                    actualizacion(lsalidavisit,actualizarvisit,salidaacvisit)
                     actualizardato3()
             while actualizarvisit in lapellidovisit or actualizarvisit==2:
                 print("¿Qué dato desea actualizar?")
@@ -1101,7 +1115,13 @@ while accion==-1:
                     salidaacvisit=str(input("Ingrese la nueva hora de salida (hh:mm): "))
                     actualizacion(lsalidavisit,salidaacvisit)
                     actualizardato4()
-
+            if actualizarvisit not in lnombrevisit and actualizar not in lapellidovisit:
+                opcion=int(input("El dato que desea actualizar no existe. Para ingresar otro dato (1), para volver al menú (2): "))
+                if opcion==1:
+                    accion2visit=3
+                else:
+                    accion2visit=0
+                    accion=-1
         while accion2visit==4:
             borrarvisit = str(input("Ingrese el nombre o el primer apellido del registro que quiere borrar: "))
             for i in lnombrevisit:
@@ -1141,6 +1161,13 @@ while accion==-1:
                     else:
                         accion2visit=0
                         accion=-1
+            if borrarvisit not in lnombrevisit and actualizar not in lapellidovisit:
+                opcion=int(input("El dato que desea borrar no existe. Para ingresar otro dato (1), para volver al menú (2): "))
+                if opcion==1:
+                    accion2visit=4
+                else:
+                    accion2visit=0
+                    accion=-1
     while accion==3:
         print("************************************************")
         print("Ingrese el número de acción que desea realizar:")
@@ -1224,7 +1251,7 @@ while accion==-1:
         elif opcion == 4:
             Buscar1(0, "BUSCAR:")
         elif opcion == 5:
-            Listar()
+            Listar1()
         print("Si desea realizar otra acción acerca del registro de alumnos sin carnet : 1")
         print("Si desea terminar su acción y volver al menú: 2")
         opcion=int(input("Ingrese su opción: "))
